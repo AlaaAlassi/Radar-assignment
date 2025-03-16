@@ -1,3 +1,6 @@
+#include <random>
+#include <iostream>
+
 class FiringUnit
 {
 private:

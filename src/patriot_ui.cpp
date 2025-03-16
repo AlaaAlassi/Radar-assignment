@@ -4,7 +4,6 @@ int PatriotUI::requestCommand() {
     std::cout << "Available commands:" << std::endl
               << "0. Quit" << std::endl
               << "1. Start Simulation" << std::endl
-              << "2. Reset Simulation" << std::endl
               << "==> Enter command: ";
             
 
@@ -73,10 +72,6 @@ void PatriotUI::handleCommand(int command) {
     case 1:
       std::cout << "Simulation started " << command << std::endl << std::endl;
       startSimulation();
-      break;
-    case 2:
-      std::cout << "Simulation reseted " << command << std::endl << std::endl;
-      //resetSimulation();
       break;
     default:
       std::cout << "ERROR: Invalid command " << command << std::endl << std::endl;
