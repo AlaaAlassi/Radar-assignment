@@ -12,5 +12,5 @@ private:
     void readfile();
 public:
     Radar();
-    std::vector<std::bitset<7>> getSignal();
+    std::vector<std::bitset<7>> getSignal(int signalIndex);
 };

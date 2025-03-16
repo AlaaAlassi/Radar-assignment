@@ -41,8 +41,12 @@ void PatriotUI::run() {
 
 void PatriotUI::startSimulation(){
 
+  int simulationTime = 20;
+  int simulationTimeStamp = 0;
+  while(simulationTimeStamp < simulationTime){
+
   std::cout << "Radar signal: " << std::endl;
-  auto radarSignal = radar.getSignal();
+  auto radarSignal = radar.getSignal(simulationTimeStamp);
   auto target = iff.identifyTarget(radarSignal);
 
   if(target == TargetType::Hostile){
@@ -59,6 +63,9 @@ void PatriotUI::startSimulation(){
   }
 
   std::cout << std::endl;
+  std::this_thread::sleep_for(std::chrono::seconds(1));
+  simulationTimeStamp++;
+}
 }
 
 void PatriotUI::handleCommand(int command) {

@@ -7,18 +7,14 @@ Radar::Radar(){
     readfile();
 }
 
-std::vector<std::bitset<7>>Radar::getSignal()
+std::vector<std::bitset<7>>Radar::getSignal(int signalIndex)
 {
-    std::vector<int> dummySignal{10,51,38,16,28,45,122,93,52,107,19};
 
-    std::vector<std::bitset<7>> signalBits;
+    std::vector<std::bitset<7>> signalBits = cachedData[signalIndex];
 
-    for (size_t i = 0; i < dummySignal.size(); ++i) {
-        std::bitset<7> bits(dummySignal[i]);
-        signalBits.push_back(bits);
-
-        std::cout << bits;  
-        if (i < dummySignal.size() - 1) {
+    for (size_t i = 0; i < signalBits.size(); ++i) {
+        std::cout << signalBits[i];
+        if (i < signalBits.size() - 1) {
             std::cout << ";";
         }
     }
