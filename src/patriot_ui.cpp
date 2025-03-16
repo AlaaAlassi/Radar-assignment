@@ -1,6 +1,6 @@
 #include "patriot_ui.hpp"
 
-int PatriotUI::RequestCommand() {
+int PatriotUI::requestCommand() {
     std::cout << "Available commands:" << std::endl
               << "0. Quit" << std::endl
               << "1. Start Simulation" << std::endl
@@ -25,12 +25,12 @@ int PatriotUI::RequestCommand() {
   return command;
 }
 
-void PatriotUI::Run() {
+void PatriotUI::run() {
     bool stop_command_received = false;
     while (!stop_command_received) {
-        const int command = RequestCommand();
+        const int command = requestCommand();
         if (command > 0) {
-        HandleCommand(command);
+        handleCommand(command);
         } else if (command < 0) {
         std::cout << "ERROR: Input error occurred" << std::endl << std::endl;
         } else if (command == 0) {
@@ -39,15 +39,20 @@ void PatriotUI::Run() {
     }
 }
 
-void PatriotUI::HandleCommand(int command) {
+void PatriotUI::startSimulation(){
+  std::cout << "Radar signal: " << std::endl;
+  radar.getSignal();
+}
+
+void PatriotUI::handleCommand(int command) {
     switch (command) {
     case 1:
-      //startSimulation();
       std::cout << "Simulation started " << command << std::endl << std::endl;
+      startSimulation();
       break;
     case 2:
-      //resetSimulation();
       std::cout << "Simulation reseted " << command << std::endl << std::endl;
+      //resetSimulation();
       break;
     default:
       std::cout << "ERROR: Invalid command " << command << std::endl << std::endl;

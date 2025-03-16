@@ -8,7 +8,7 @@ int main(int /*argc*/, char* /*argv*/[]) {
             << std::endl;
 
   PatriotUI user_interface;
-  user_interface.Run();
+  user_interface.run();
 
   return 0;
 }

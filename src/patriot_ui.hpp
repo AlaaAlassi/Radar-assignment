@@ -7,13 +7,15 @@
 
 class PatriotUI {
 public:
-  void Run();
+  void run();
+
 
 private:
-  int RequestCommand();
-  void HandleCommand(int command);
-  void ResetSimulation();
+  int requestCommand();
+  void handleCommand(int command);
+  void startSimulation();
+  void resetSimulation();
 
-  //Radar radar;
+  Radar radar;
   Iff iff;
 };
