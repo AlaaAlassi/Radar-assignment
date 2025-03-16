@@ -7,7 +7,10 @@
 class Radar
 {
 private:
-    std::vector <unsigned char> radar_signal;
+    std::vector <std::bitset<7>> radarSignals;
+    std::vector<std::vector<std::bitset<7>>> cachedData;
+    void readfile();
 public:
+    Radar();
     std::vector<std::bitset<7>> getSignal();
 };
