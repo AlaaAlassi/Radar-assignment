@@ -1,5 +1,11 @@
+#include <random>
 #include "firing_unit.hpp"
 
 double FiringUnit::fire(){
-    return 0.7;
+
+    static std::random_device rd;
+    static std::mt19937 gen(rd()); 
+    static std::uniform_real_distribution<double> dist(0.0, 1.0);
+
+    return dist(gen);
 }

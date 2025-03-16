@@ -20,4 +20,5 @@ private:
   Radar radar;
   Iff iff;
   FiringUnit firingUnit;
+  double pk_ = 0.8;
 };
