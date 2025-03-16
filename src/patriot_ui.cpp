@@ -41,7 +41,11 @@ void PatriotUI::run() {
 
 void PatriotUI::startSimulation(){
   std::cout << "Radar signal: " << std::endl;
-  radar.getSignal();
+  auto radarSignal = radar.getSignal();
+  if(iff.identifyTarget(radarSignal) == TargetType::Hostile){
+    std::cout <<  "Hostile Target Detected" << std::endl;
+  }
+  std::cout << std::endl;
 }
 
 void PatriotUI::handleCommand(int command) {
