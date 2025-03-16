@@ -9,4 +9,6 @@ PRIVATE
     radar.hpp
 	iff.cpp
 	iff.hpp
+	firing_unit.hpp
+	firing_unit.cpp
 )

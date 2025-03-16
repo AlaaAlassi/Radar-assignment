@@ -4,6 +4,7 @@
 
 #include "radar.hpp"
 #include "iff.hpp"
+#include "firing_unit.hpp"
 
 class PatriotUI {
 public:
@@ -18,4 +19,5 @@ private:
 
   Radar radar;
   Iff iff;
+  FiringUnit firingUnit;
 };

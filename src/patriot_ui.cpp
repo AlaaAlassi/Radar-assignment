@@ -47,9 +47,17 @@ void PatriotUI::startSimulation(){
 
   if(target == TargetType::Hostile){
     std::cout <<  "Hostile Target Detected" << std::endl;
+    double pk = firingUnit.fire();
+    if(pk > 0.8){
+      std::cout << "Target Missed" << std::endl;
+    }else{
+      std::cout << "Target Neutralized" << std::endl;
+    }
+
   }else if(target == TargetType::Friend){
     std::cout << "Friend Target Detected" << std::endl;
   }
+
   std::cout << std::endl;
 }
 
