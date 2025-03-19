@@ -10,8 +10,8 @@
 
 class PatriotUI {
 public:
+  PatriotUI(const std::string& inputFilePath):radar(inputFilePath){};
   void run();
-
 
 private:
   int requestCommand();
