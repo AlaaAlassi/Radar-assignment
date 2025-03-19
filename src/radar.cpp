@@ -1,13 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <filesystem>
 #include"radar.hpp"
 
-namespace fs = std::filesystem;
 
 Radar::Radar(const std::string& filePath){
-    std::cout << "Radar initialized with file: " << filePath << std::endl;
+    std::cout << "Radar initialized with file: " << filePath << std::endl << std::endl;
     readfile(filePath);
 }
 
