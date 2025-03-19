@@ -68,3 +68,5 @@ Missile Launched
 ## Exit Application
 To exit the application, enter `0` at the command prompt.
 
+## Software Design
+![software design](assets/software-design.svg)

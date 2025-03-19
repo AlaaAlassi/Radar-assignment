@@ -1,0 +1,18 @@
+@startuml
+class PatriotUI {
+}
+
+class Radar {
+}
+
+class IFF {
+}
+
+class FiringUnit {
+}
+
+PatriotUI *-- Radar
+PatriotUI *-- IFF
+PatriotUI *-- FiringUnit
+
+@enduml
