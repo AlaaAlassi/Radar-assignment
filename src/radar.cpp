@@ -3,8 +3,10 @@
 #include <sstream>
 #include"radar.hpp"
 
-Radar::Radar(){
-    readfile();
+
+Radar::Radar(const std::string& filePath){
+    std::cout << "Radar initialized with file: " << filePath << std::endl << std::endl;
+    readfile(filePath);
 }
 
 std::vector<std::bitset<7>>Radar::getSignal(int signalIndex)
@@ -24,9 +26,9 @@ std::vector<std::bitset<7>>Radar::getSignal(int signalIndex)
 
 }
 
-void Radar::readfile(){
+void Radar::readfile(const std::string& filePath){
 
-std::ifstream file("../../data/radar_data.csv");
+std::ifstream file(filePath);
 if (!file.is_open()) {
     std::cerr << "Error opening file!\n";
 }
